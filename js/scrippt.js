@@ -50,6 +50,7 @@ function showForm(event) {
                 popupBlock.classList.remove('show');
                 popupButtons.classList.remove('clicked');
                 popupBlock.removeEventListener('click', out);
+                document.body.style.overflow = "auto";
             }
         }
         popupBlock.addEventListener('click', out)
@@ -65,11 +66,13 @@ function indefender(event) {
         if (event.code === "Escape") {
             popupBlock.classList.remove('show');
             popupButtons.classList.remove('clicked');
+            document.body.style.overflow = "auto";
         }
     }
     if (event.code === "Escape" && event.type === "keyup") {
         window.removeEventListener('keydown', indefender);
         window.removeEventListener('keyup', indefender);
+        document.body.style.overflow = "auto";
     }
 }
 //key-out
